@@ -1,0 +1,27 @@
+int binary_search ( int * numbers , int key , int length )
+{
+	int startIndex = 0;
+	int endIndex = length - 1;
+	int middleIndex = endIndex /2;
+	int keyIndex = -1;
+	int NumIters = 1;
+
+	while ( keyIndex == -1) {
+		if ( startIndex > endIndex )
+			break;
+		else if ( numbers [ middleIndex ] == key )
+				keyIndex = middleIndex;
+		else if ( numbers [ middleIndex ] > key ) 
+				{
+				endIndex = middleIndex -1;
+				} 
+			else 
+			{
+				startIndex = middleIndex +1;
+			}
+			numbers [ middleIndex ] = - NumIters ;
+	middleIndex = startIndex + ( endIndex - startIndex )/2;
+	NumIters ++;
+ }
+	return keyIndex ;
+ }
